@@ -20,6 +20,7 @@ public class UserDaoUnitTest {
         user.setRoles(Arrays.asList("admin", "master"));
 
         userDao.saveUser(user);
+        userDao.deleteUser(user);
     }
 
     @Test
@@ -31,9 +32,6 @@ public class UserDaoUnitTest {
         user.setEmail("fake@email.com");
         user.setRoles(Arrays.asList("admin", "master"));
 
-        try {
-            userDao.deleteUser(user);
-        } catch (NullPointerException e) {
-        }
+        userDao.deleteUser(user);
     }
 }
